@@ -1,0 +1,52 @@
+========================================================================
+             ĐỒ ÁN TỐT NGHIỆP / BÁO CÁO MÔN HỌC - COFFEE SPACE
+              (Hệ Thống Quản Lý Và Đặt Hàng Cà Phê Trực Tuyến)
+========================================================================
+
+Kính gửi Quý Thầy/Cô chấm bài,
+
+Đây là một dự án FULL-STACK hoàn chỉnh kết hợp giữa Frontend hiện đại và Backend xử lý dữ liệu vĩnh viễn:
+1. FRONTEND: Ứng dụng Web Single Page Application (SPA) xây dựng bằng ReactJS + Vite + Tailwind CSS.
+2. BACKEND (Nằm trong thư mục 'backend'): Server Java REST API (SparkJava) kết nối CSDL MariaDB qua JPA/Hibernate.
+
+------------------------------------------------------------------------
+I. CẤU TRÚC THƯ MỤC NỘP BÀI:
+------------------------------------------------------------------------
+Coffee-Frontend/ (Thư mục gốc)
+├── src/                    <-- Mã nguồn giao diện Web React
+├── public/                 <-- Tài nguyên hình ảnh, logo Web
+├── seed.sql                <-- Script khởi tạo Cơ sở dữ liệu MariaDB
+├── run.bat                 <-- File khởi động nhanh cả Web và Server Java (1-Click)
+└── backend/                <-- THƯ MỤC SERVER JAVA BACKEND (Mã nguồn Server)
+    ├── src/main/java/      <-- Source code Java REST API & Sockets
+    └── pom.xml             <-- File cấu hình thư viện Maven của Java
+
+------------------------------------------------------------------------
+II. HƯỚNG DẪN KHỞI CHẠY HỆ THỐNG:
+------------------------------------------------------------------------
+Yêu cầu: Máy tính đã cài sẵn Node.js và MariaDB.
+
+Bước 1: Cấu hình Cơ sở dữ liệu (Database)
+- Mở công cụ quản lý database MariaDB của Thầy/Cô và tạo một database mới tên là: coffee_manager
+- Nhập (Import) file "seed.sql" (nằm ở thư mục gốc của đồ án này) vào database vừa tạo để có dữ liệu mẫu.
+- [Tùy chọn] Nếu mật khẩu tài khoản root MariaDB của Thầy/Cô khác với mặc định "sapassword", vui lòng mở file cấu hình sau để sửa lại mật khẩu cho khớp:
+  Đường dẫn file: backend/src/main/resources/META-INF/persistence.xml (Dòng 21-22)
+
+Bước 2: Cài đặt thư viện Web (Chỉ cần làm lần đầu)
+- Mở cmd/terminal tại thư mục gốc "Coffee-Frontend" và chạy lệnh:
+  npm install
+
+Bước 3: Khởi động hệ thống (Chỉ với 1 click)
+- Nháy đúp chuột vào file "run.bat" ở thư mục gốc.
+- Hệ thống sẽ tự động bật 1 cửa sổ chạy Server Java REST API (Port 8080) và tự động mở trình duyệt hiển thị Web React (Port 5173).
+
+------------------------------------------------------------------------
+III. TÀI KHOẢN MẪU ĐỂ DEMO HỆ THỐNG:
+------------------------------------------------------------------------
+- Trang đặt món dành cho Khách hàng: http://localhost:5173/menu
+- Trang Quản trị viên (Manager Dashboard): http://localhost:5173/login
+  * Tài khoản Quản lý: admin / 123
+  * Tài khoản Nhân viên: staff / 123
+
+Kính chúc Quý Thầy/Cô có trải nghiệm tốt nhất khi đánh giá đồ án của chúng em!
+========================================================================
